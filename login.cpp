@@ -81,44 +81,7 @@ void imprimir_matriz(double** matriz,int col){
     cout << endl;
 }
 
-int main(){
-    cout << "bem-vindo ao banco inside LTDA!" << endl;
-    int quant;
-    cout << "quantos usuarios deseja cadastrar? ";
-    cin >> quant;
-    Login *usuarios = new Login[quant];
-    preencher_logins(usuarios,quant);
-    string username,senha;
-
-    //conferir usuario digitado
-    int index;
-    do{
-    cout << "nome de usuario: ";
-    cin >> username;
-    index = buscar(usuarios,quant,username);
-    if(index == -1){
-        cout << "usuario invalido digite novamente" << endl;
-        }
-    } 
-    while(index == -1);
-
-    //conferir senha digitada
-    do {
-        cout << "senha: ";
-        cin >> senha;
-        if(usuarios[index].senha != senha){
-            cout<< "senha invalida digite novamente" << endl;
-        }
-    }
-    while(usuarios[index].senha != senha);
-
-    //definir quantia
-    double quantia = sorteio();
-
-    //inicializar sistema
-    cout<< "seja bem-vindo " << usuarios[index].username << endl;
-    cout << "seu montante em dinheiro e de " << quantia << "RS" << endl;
-    cout << " qual acao deseja realizar?" << endl;
+void opcoes(double &quantia){
     int dec;
     double valor;
     int linhas,meses;
@@ -126,7 +89,7 @@ int main(){
     int continuar;
     int lixo;
     do{
-        cout<< "opcao[1] sacar, opcao[2] depositar, opcao[3] investir: ";
+        cout<< "Opcao[1] sacar, opcao[2] depositar, opcao[3] investir: ";
         cin >> dec;
         switch (dec){
         case 1:
@@ -171,8 +134,48 @@ int main(){
         cin >> continuar;
     }
     while((dec < 1 and dec > 3) or continuar == 1);
+}
 
-    //fim do programa
+int main(){
+    cout << "Bem-vindo ao banco inside LTDA!" << endl;
+    int quant;
+    cout << "Quantos usuarios deseja cadastrar? ";
+    cin >> quant;
+    Login *usuarios = new Login[quant];
+    preencher_logins(usuarios,quant);
+    string username,senha;
+
+    //conferir usuario digitado
+    int index;
+    do{
+    cout << "Nome de usuario: ";
+    cin >> username;
+    index = buscar(usuarios,quant,username);
+    if(index == -1){
+        cout << "Usuario invalido digite novamente" << endl;
+        }
+    } 
+    while(index == -1);
+
+    //conferir senha digitada
+    do {
+        cout << "senha: ";
+        cin >> senha;
+        if(usuarios[index].senha != senha){
+            cout<< "Senha invalida digite novamente" << endl;
+        }
+    }
+    while(usuarios[index].senha != senha);
+
+    //definir quantia
+    double quantia = sorteio();
+
+    //inicializar sistema
+    cout<< "Seja bem-vindo " << usuarios[index].username << endl;
+    cout << "Seu montante em dinheiro e de " << quantia << "RS" << endl;
+    cout << "Qual acao deseja realizar?" << endl;
+    opcoes(quantia);
+    int lixo;
     cin >> lixo;
     return 0;
 }
