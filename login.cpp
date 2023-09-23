@@ -180,8 +180,6 @@ int main(){
     //exibir opções 
     opcoes(quantia);
 
-
-
     //fim do programa
     cout << "--------------------------------------------" << endl;
     cout << "Sistema encerrado, obrigado pela preferencia" << endl;
