@@ -137,7 +137,9 @@ void opcoes(double &quantia){
 }
 
 int main(){
+    cout << "-------------------------------" << endl;
     cout << "Bem-vindo ao banco inside LTDA!" << endl;
+    cout << "-------------------------------" << endl;
     int quant;
     cout << "Quantos usuarios deseja cadastrar? ";
     cin >> quant;
@@ -174,7 +176,16 @@ int main(){
     cout<< "Seja bem-vindo " << usuarios[index].username << endl;
     cout << "Seu montante em dinheiro e de " << quantia << "RS" << endl;
     cout << "Qual acao deseja realizar?" << endl;
+
+    //exibir opções 
     opcoes(quantia);
+
+
+
+    //fim do programa
+    cout << "--------------------------------------------" << endl;
+    cout << "Sistema encerrado, obrigado pela preferencia" << endl;
+    cout << "--------------------------------------------" << endl;
     int lixo;
     cin >> lixo;
     return 0;
