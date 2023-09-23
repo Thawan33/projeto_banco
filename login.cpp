@@ -1,7 +1,8 @@
 #include <iostream>
-using namespace std;
 #include <cstdlib>
 #include <ctime>
+
+using namespace std;
 
 struct Login{
     string username;
