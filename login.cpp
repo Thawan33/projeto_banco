@@ -137,9 +137,9 @@ void opcoes(double &quantia){
 }
 
 int main(){
-    cout << "-------------------------------" << endl;
-    cout << "Bem-vindo ao banco inside LTDA!" << endl;
-    cout << "-------------------------------" << endl;
+    cout << "--------------------------" << endl;
+    cout << "Bem-vindo ao banco Inside!" << endl;
+    cout << "--------------------------" << endl;
     int quant;
     cout << "Quantos usuarios deseja cadastrar? ";
     cin >> quant;
